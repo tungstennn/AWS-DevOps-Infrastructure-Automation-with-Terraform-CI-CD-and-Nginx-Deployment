@@ -1,5 +1,5 @@
 # Ignore Terraform state files and backups
-*.tfstate
+#*.tfstate   # temporarily commented to allow terraform to destroy infrastructure
 *.tfstate.backup
 
 # Ignore Terraform working directory

@@ -40,6 +40,10 @@ The goal of this project is to build an automated AWS infrastructure using Terra
 
 ## **Essential Things Already Completed but Not Fully Committed**
 
+1. **Modularization**:
+
+   - Terraform modules for VPC, EC2, and Security Groups have been created to promote reusability and reduce code duplication.
+
 1. **Key Pair Management**:
 
    - Terraform generates an SSH key pair (`tls_private_key`), but ensure the private key (`my-key.pem`) is saved securely and not exposed in the repository.

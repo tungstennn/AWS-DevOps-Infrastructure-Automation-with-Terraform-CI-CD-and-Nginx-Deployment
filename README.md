@@ -14,7 +14,7 @@ The goal of this project is to build an automated AWS infrastructure using Terra
 ## **Checklist**
 
 ### **Infrastructure Setup**
-- [ ] Create a module for the VPC that includes all required parts (e.g., NAT Gateway, route tables, etc.).
+- [x] Create a module for the VPC that includes all required parts (e.g., NAT Gateway, route tables, etc.).
 - [ ] Create a module for the EC2 instance that runs a web application (Nginx).
 - [ ] Ensure the EC2 instance is accessible via the public IP address.
 

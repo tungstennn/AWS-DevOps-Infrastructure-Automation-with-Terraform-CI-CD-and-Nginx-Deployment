@@ -1,7 +1,7 @@
 # VPC vars__________________________________________
 
-cidr_block         = "10.1.0.0/24"
-environment        = "dev"
+cidr_block  = "10.1.0.0/24"
+environment = "dev"
 vpc_name           = "dev-vpc"
 subnet_cidr_block  = "10.1.0.0/28"
 public_subnet_name = "public-subnet"

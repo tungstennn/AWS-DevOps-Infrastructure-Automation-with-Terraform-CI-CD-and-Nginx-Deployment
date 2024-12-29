@@ -11,6 +11,9 @@
 # Ignore SSH key files (if any are generated locally)
 *.pem
 
+# Ignore .env files (if any are generated locally)
+.env
+
 # Ignore IDE/editor-specific files
 .vscode/
 *.code-workspace

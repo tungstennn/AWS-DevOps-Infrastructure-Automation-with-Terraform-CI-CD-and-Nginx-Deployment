@@ -8,25 +8,25 @@ on:
       - prod
 
 jobs:
-  terraform:
-    name: Deploy to ${{ github.ref_name }} Environment
-    runs-on: ubuntu-latest
+  # terraform:
+  #   name: Deploy to ${{ github.ref_name }} Environment
+  #   runs-on: ubuntu-latest
 
-    steps:
-      # Step 1: Check out the code
-      - name: Checkout Code
-        uses: actions/checkout@v3
+  #   steps:
+  #     # Step 1: Check out the code
+  #     - name: Checkout Code
+  #       uses: actions/checkout@v3
 
-      # Step 2: Set up Terraform
-      - name: Set Up Terraform
-        uses: hashicorp/setup-terraform@v2
-        with:
-          terraform_version: "1.7.3"
+  #     # Step 2: Set up Terraform
+  #     - name: Set Up Terraform
+  #       uses: hashicorp/setup-terraform@v2
+  #       with:
+  #         terraform_version: "1.7.3"
 
-      # Step 3: Initialize Terraform in the environment-specific directory
-      - name: Initialize Terraform
-        run: terraform init
-        working-directory: ./environments/${{ github.ref_name }}
+  #     # Step 3: Initialize Terraform in the environment-specific directory
+  #     - name: Initialize Terraform
+  #       run: terraform init
+  #       working-directory: ./environments/${{ github.ref_name }}
 
   #     # Step 4: Plan Terraform Changes
   #     - name: Plan Terraform Changes
@@ -59,7 +59,7 @@ jobs:
       - name: Set Up Terraform
         uses: hashicorp/setup-terraform@v2
         with:
-          terraform_version: "1.5.0"
+          terraform_version: "1.7.3"
 
       - name: Initialize Terraform
         run: terraform init

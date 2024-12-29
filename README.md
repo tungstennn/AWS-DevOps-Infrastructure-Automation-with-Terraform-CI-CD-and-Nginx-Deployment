@@ -93,7 +93,5 @@ The goal of this project is to build an automated AWS infrastructure using Terra
 
 ---
 
-This checklist and README should guide you through completing and documenting your project efficiently. Let me know if you need to expand or modify any section!
-
 
 

@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - dev
-      - staging
+      - stage
       - prod
 
 jobs:
@@ -21,7 +21,7 @@ jobs:
       - name: Set Up Terraform
         uses: hashicorp/setup-terraform@v2
         with:
-          terraform_version: "1.5.0"
+          terraform_version: "1.7.3"
 
       # Step 3: Initialize Terraform in the environment-specific directory
       - name: Initialize Terraform

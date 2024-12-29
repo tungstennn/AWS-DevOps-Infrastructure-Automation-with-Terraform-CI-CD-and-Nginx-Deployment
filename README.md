@@ -57,7 +57,7 @@ The goal of this project is to build an automated AWS infrastructure using Terra
 
    - A PowerShell script dynamically fetches the current public IP of the machine and sets it as the `allowed_ssh_ip` variable. The script then runs `terraform plan` and `terraform apply` automatically.
 
-   **PowerShell Script Example:**
+   **run_powershell.ps1:**
 
    ```powershell
    $my_ip = (Invoke-WebRequest -Uri "http://ifconfig.me").Content.Trim() + "/32"
@@ -65,26 +65,31 @@ The goal of this project is to build an automated AWS infrastructure using Terra
    terraform plan
    terraform apply
    ```
-
+   
 ## **How to Use This Project**
 
 1. Clone the repository and navigate to the desired environment (`environments/dev`).
 2. Set up your AWS credentials as environment variables.
-3. Initialize Terraform:
-   ```bash
-   terraform init
+3. Run the provided PowerShell script (`run_terraform.ps1`) to dynamically set the `allowed_ssh_ip` variable and apply Terraform:
+
+   ```powershell
+   ./run_terraform.ps1
    ```
-4. Review the plan:
+
+   The script fetches your current public IP, sets it as `allowed_ssh_ip`, and runs `terraform plan` and `terraform apply`.
+
+4. If not using the PowerShell script, update the `allowed_ssh_ip` variable manually in your `terraform.tfvars` file before running the commands:
+
    ```bash
    terraform plan
-   ```
-5. Apply the configuration:
-   ```bash
    terraform apply
    ```
-6. Access the EC2 instance and verify that Nginx is running by visiting `http://<instance-public-ip>` in your browser.
+
+5. Access the EC2 instance and verify that Nginx is running by visiting `http://<instance-public-ip>` in your browser.
 
 ---
 
 This checklist and README should guide you through completing and documenting your project efficiently. Let me know if you need to expand or modify any section!
+
+
 

@@ -15,19 +15,19 @@ The goal of this project is to build an automated AWS infrastructure using Terra
 
 ### **Infrastructure Setup**
 - [x] Create a module for the VPC that includes all required parts (e.g., NAT Gateway, route tables, etc.).
-- [ ] Create a module for the EC2 instance that runs a web application (Nginx).
-- [ ] Ensure the EC2 instance is accessible via the public IP address.
+- [x] Create a module for the EC2 instance that runs a web application (Nginx).
+- [x] Ensure the EC2 instance is accessible via the public IP address.
 
 ### **Environment-Specific Configurations**
-- [ ] Configure Terraform to support at least three environments: dev, staging, and production.
-- [ ] Use separate `terraform.tfvars` files for each environment to specify environment-specific variables (e.g., CIDR block, instance type).
-- [ ] Ensure each environment works independently without conflicts.
+- [x] Configure Terraform to support at least three environments: dev, staging, and production.
+- [x] Use separate `terraform.tfvars` files for each environment to specify environment-specific variables (e.g., CIDR block, instance type).
+- [x] Ensure each environment works independently without conflicts.
 
 ### **Best Practices and Enhancements**
-- [ ] Use environment variables for all sensitive data (e.g., AWS credentials) to avoid hardcoding.
-- [ ] Ensure proper folder/directory strategy is followed for modules and environment configurations.
+- [x] Use environment variables for all sensitive data (e.g., AWS credentials) to avoid hardcoding.
+- [x] Ensure proper folder/directory strategy is followed for modules and environment configurations.
 - [ ] Add error handling and validation for Terraform variables.
-- [ ] Document all modules and their inputs/outputs in this README.
+- [x] Document all modules and their inputs/outputs in this README.
 
 ### **CI/CD Pipeline**
 - [ ] Create a CI/CD pipeline to automate Terraform workflows (e.g., using GitHub Actions, GitLab CI, or Jenkins).

@@ -22,5 +22,4 @@ module "ec2" {
   security_group_id = module.security_group.security_group_id
   instance_type     = var.instance_type
   ami               = var.ami
-
 }

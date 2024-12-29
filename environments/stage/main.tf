@@ -1,11 +1,11 @@
 module "vpc" {
-    source = "../../modules/vpc"
-    cidr_block = var.cidr_block
-    create_internet_gateway = var.create_internet_gateway
-    environment = var.environment
-    vpc_name = var.vpc_name
-    subnet_cidr_block = var.subnet_cidr_block
-    public_subnet_name = var.public_subnet_name
+  source                  = "../../modules/vpc"
+  cidr_block              = var.cidr_block
+  create_internet_gateway = var.create_internet_gateway
+  environment             = var.environment
+  vpc_name                = var.vpc_name
+  subnet_cidr_block       = var.subnet_cidr_block
+  public_subnet_name      = var.public_subnet_name
 }
 
 module "security_group" {
@@ -22,4 +22,5 @@ module "ec2" {
   security_group_id = module.security_group.security_group_id
   instance_type     = var.instance_type
   ami               = var.ami
+
 }

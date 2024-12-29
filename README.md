@@ -35,10 +35,10 @@ The goal of this project is to build an automated AWS infrastructure using Terra
 
 ### **Bonus**
 - [ ] Write Terratests for the modules to validate infrastructure (in Golang or Python).
-- [ ] Create a detailed README for the project to allow others to reproduce the work.
-- [ ] Commit the project to a GitHub repository, including useful files like `.gitignore` and pre-commit hooks.
+- [x] Create a detailed README for the project to allow others to reproduce the work.
+- [x] Commit the project to a GitHub repository, including useful files like `.gitignore` and pre-commit hooks.
 
-## **Essential Things Already Completed but Not Fully Committed**
+## **Progress Summary**
 
 1. **Modularization**:
 
@@ -92,8 +92,6 @@ The goal of this project is to build an automated AWS infrastructure using Terra
 5. Access the EC2 instance and verify that Nginx is running by visiting `http://<instance-public-ip>` in your browser.
 
 ---
-
-This checklist and README should guide you through completing and documenting your project efficiently. Let me know if you need to expand or modify any section!
 
 
 

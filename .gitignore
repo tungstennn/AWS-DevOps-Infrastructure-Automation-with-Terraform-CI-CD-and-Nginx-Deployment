@@ -1,0 +1,20 @@
+# Ignore Terraform state files and backups
+*.tfstate
+*.tfstate.backup
+
+# Ignore Terraform working directory
+.terraform/
+
+# Do not ignore the lock file for consistent provider versions
+!.terraform.lock.hcl
+
+# Ignore SSH key files (if any are generated locally)
+*.pem
+
+# Ignore IDE/editor-specific files
+.vscode/
+*.code-workspace
+
+# Ignore system-specific files
+.DS_Store
+Thumbs.db

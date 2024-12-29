@@ -38,7 +38,7 @@ The goal of this project is to build an automated AWS infrastructure using Terra
 - [x] Create a detailed README for the project to allow others to reproduce the work.
 - [x] Commit the project to a GitHub repository, including useful files like `.gitignore` and pre-commit hooks.
 
-## **Essential Things Already Completed but Not Fully Committed**
+## **Progress Summary**
 
 1. **Modularization**:
 

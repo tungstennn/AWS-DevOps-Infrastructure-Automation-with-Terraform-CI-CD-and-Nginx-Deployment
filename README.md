@@ -69,7 +69,7 @@ The goal of this project is to build an automated AWS infrastructure using Terra
    terraform plan
    terraform apply
    ```
-## **Known Issues**
+## **Areas of Improvement**
 
 ### **Prod CI/CD Pipeline Issue**
 - The `prod` branch pipeline creates the infrastructure successfully, but the second job (Terraform Destroy) does not recognize the resources created in the first job.

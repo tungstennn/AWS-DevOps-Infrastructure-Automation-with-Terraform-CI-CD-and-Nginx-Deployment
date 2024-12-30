@@ -83,7 +83,6 @@ The goal of this project is to build an automated AWS infrastructure using Terra
 
 ### **Prod CI/CD Pipeline Issue**
 - The `prod` branch pipeline creates the infrastructure successfully, but the second job (Terraform Destroy) does not recognize the resources created in the first job.
-- **Root Cause**: The absence of a Terraform backend to store the `.tfstate` file leads to a lack of shared state between jobs.
 - **Current workaround**: Manual deletion of resources on the AWS console is required for now.
 - **Resolution Plan**:
   - Set up an S3 backend for the `prod` environment to store `.tfstate` files.

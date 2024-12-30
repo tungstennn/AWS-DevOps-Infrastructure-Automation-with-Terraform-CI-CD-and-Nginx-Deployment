@@ -30,9 +30,8 @@ The goal of this project is to build an automated AWS infrastructure using Terra
 - [x] Document all modules and their inputs/outputs in this README.
 
 ### **CI/CD Pipeline**
-- [x] Create a CI/CD pipeline to automate Terraform workflows (e.g., using GitHub Actions, GitLab CI, or Jenkins).
-- [x] Ensure the pipeline runs `terraform plan` for the development and staging branches.
-- [ ] Ensure the pipeline runs `terraform plan` and `terraform apply` on the production branch.
+- [x] Create a CI/CD pipeline to automate Terraform workflows for `dev` and `stage` branches.
+- [ ] Fully resolve issues with the `prod` branch pipeline to ensure end-to-end functionality.
 
 ### **Bonus**
 - [ ] Write Terratests for the modules to validate infrastructure (in Golang or Python).

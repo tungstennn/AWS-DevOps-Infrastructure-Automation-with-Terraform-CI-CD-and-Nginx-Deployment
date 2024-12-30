@@ -95,7 +95,7 @@ The goal of this project is to build an automated AWS infrastructure using Terra
 ## **How to Use This Project Locally**
 
 1. Clone the repository and navigate to the desired environment (`environments/dev`).
-2. Set up your AWS credentials as environment variables.
+2. Set up your AWS credentials as environment variables or running `aws configure` in terminal.
 3. First run `terraform init` into the terminal
 4. Then run the provided PowerShell script (`run_terraform.ps1`) to dynamically set the `allowed_ssh_ip` variable and apply Terraform:
 

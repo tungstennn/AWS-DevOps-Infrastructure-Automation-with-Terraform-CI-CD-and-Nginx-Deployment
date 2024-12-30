@@ -38,3 +38,12 @@ module "ec2" {
   instance_type     = var.instance_type
   ami               = var.ami
 }
+
+
+terraform {
+  backend "s3" {
+    bucket = "prod-terraform-state-bucket"
+    key    = "prod/terraform.tfstate"
+    region = "eu-west-2"
+  }
+}

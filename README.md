@@ -14,7 +14,7 @@ The goal of this project is to build an automated AWS infrastructure using Terra
 ## **Checklist**
 
 ### **Infrastructure Setup**
-- [x] Create a module for the VPC that includes all required parts (e.g., NAT Gateway, route tables, etc.).
+- [x] Create a module for the VPC that includes all required parts (e.g., Internet Gateway, route tables, etc.).
 - [x] Create a module for the EC2 instance that runs a web application (Nginx).
 - [x] Ensure the EC2 instance is accessible via the public IP address.
 
@@ -74,16 +74,23 @@ The goal of this project is to build an automated AWS infrastructure using Terra
 ### **Prod CI/CD Pipeline Issue**
 - The `prod` branch pipeline creates the infrastructure successfully, but the second job (Terraform Destroy) does not recognize the resources created in the first job.
 - **Root Cause**: The absence of a Terraform backend to store the `.tfstate` file leads to a lack of shared state between jobs.
+- **Current workaround**: Manual deletion of resources on the AWS console is required for now.
 - **Resolution Plan**:
   - Set up an S3 backend for the `prod` environment to store `.tfstate` files.
   - Reconfigure the pipeline to use the shared state in both jobs.
-
+    
+### **Dynamic `allowed_ssh_ip` Value**
+- When running locally, the `run_terraform.ps1` script dynamically updates the `allowed_ssh_ip` variable to the current public IP for secure SSH access.
+- **Pipeline Limitation**: The CI/CD pipeline does not use this script and instead defaults the value to `0.0.0.0/0`, which is not best practice.
+- **Resolution Plan**:
+  - Create an additional pipeline step to dynamically fetch and update the `allowed_ssh_ip` value during CI/CD runs.
 
 ## **How to Use This Project Locally**
 
 1. Clone the repository and navigate to the desired environment (`environments/dev`).
 2. Set up your AWS credentials as environment variables.
-3. Run the provided PowerShell script (`run_terraform.ps1`) to dynamically set the `allowed_ssh_ip` variable and apply Terraform:
+3. First run `terraform init` into the terminal
+4. Then run the provided PowerShell script (`run_terraform.ps1`) to dynamically set the `allowed_ssh_ip` variable and apply Terraform:
 
    ```powershell
    ./run_terraform.ps1
@@ -91,14 +98,14 @@ The goal of this project is to build an automated AWS infrastructure using Terra
 
    The script fetches your current public IP, sets it as `allowed_ssh_ip`, and runs `terraform plan` and `terraform apply`.
 
-4. If not using the PowerShell script, update the `allowed_ssh_ip` variable manually in your `terraform.tfvars` file before running the commands:
+5. If not using the PowerShell script, update the `allowed_ssh_ip` variable manually in your `terraform.tfvars` file before running the commands:
 
    ```bash
    terraform plan
    terraform apply
    ```
 
-5. Access the EC2 instance and verify that Nginx is running by visiting `http://<instance-public-ip>` in your browser.
+6. Access the EC2 instance and verify that Nginx is running by visiting `http://<instance-public-ip>` in your browser.
 
 ---
 

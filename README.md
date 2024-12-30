@@ -106,13 +106,15 @@ The goal of this project is to build an automated AWS infrastructure using Terra
    The script fetches your current public IP, sets it as `allowed_ssh_ip`, and runs `terraform plan` and `terraform apply`.
 
 5. If not using the PowerShell script, update the `allowed_ssh_ip` variable manually in your `terraform.tfvars` file before running the commands:
+    - Run this in your bash script `my_ip=$(curl -s http://ifconfig.me)/32`.
+    - Then run `export TF_VAR_allowed_ssh_ip=$my_ip` to set `my_ip` as an environment variable for terraform.
 
    ```bash
    terraform plan
    terraform apply
    ```
 
-6. Access the EC2 instance and verify that Nginx is running by visiting `http://<instance-public-ip>` in your browser.
+7. Access the EC2 instance and verify that Nginx is running by visiting `http://<instance-public-ip>` in your browser.
 
 ---
 

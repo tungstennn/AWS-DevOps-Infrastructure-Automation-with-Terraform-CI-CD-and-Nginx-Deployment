@@ -30,14 +30,13 @@ The goal of this project is to build an automated AWS infrastructure using Terra
 - [x] Document all modules and their inputs/outputs in this README.
 
 ### **CI/CD Pipeline**
-- [ ] Create a CI/CD pipeline to automate Terraform workflows (e.g., using GitHub Actions, GitLab CI, or Jenkins).
-- [ ] Ensure the pipeline runs `terraform plan` and `terraform apply` as part of the workflow.
+- [x] Create a CI/CD pipeline to automate Terraform workflows for `dev` and `stage` branches.
+- [ ] Fully resolve issues with the `prod` branch pipeline to ensure end-to-end functionality.
 
 ### **Bonus**
 - [ ] Write Terratests for the modules to validate infrastructure (in Golang or Python).
 - [x] Create a detailed README for the project to allow others to reproduce the work.
 - [x] Commit the project to a GitHub repository, including useful files like `.gitignore` and pre-commit hooks.
-
 ## **Progress Summary**
 
 1. **Modularization**:
@@ -69,6 +68,19 @@ The goal of this project is to build an automated AWS infrastructure using Terra
    terraform plan
    terraform apply
    ```
+---
+
+## **Known Issues**
+
+### **Prod CI/CD Pipeline Issue**
+- The `prod` branch pipeline creates the infrastructure successfully, but the second job (Terraform Destroy) does not recognize the resources created in the first job.
+- **Root Cause**: The absence of a Terraform backend to store the `.tfstate` file leads to a lack of shared state between jobs.
+- **Resolution Plan**:
+  - Set up an S3 backend for the `prod` environment to store `.tfstate` files.
+  - Reconfigure the pipeline to use the shared state in both jobs.
+
+---
+   
    
 ## **How to Use This Project**
 

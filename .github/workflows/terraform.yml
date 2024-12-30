@@ -63,11 +63,11 @@ jobs:
 
       - name: Initialize Terraform
         run: terraform init
-        working-directory: ./environments/${{ github.event.inputs.environment }}
+        working-directory: ./environments/${{ github.ref_name }}
 
       - name: Destroy Terraform Resources
         run: terraform destroy -auto-approve
-        working-directory: ./environments/${{ github.event.inputs.environment }}
+        working-directory: ./environments/${{ github.ref_name }}
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}

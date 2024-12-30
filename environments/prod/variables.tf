@@ -3,42 +3,42 @@
 variable "region" {
   description = "The AWS region"
   type        = string
-  default     = "eu-west-2a"
+  default     = "eu-west-2"
 }
 
 # VPC variables_____________________________
 
 variable "cidr_block" {
   description = "The CIDR block for the VPC"
-  type = string
-  default = "10.0.3.0/16"
+  type        = string
+  default     = "10.0.3.0/16"
 }
 
-variable "create_internet_gateway"{
+variable "create_internet_gateway" {
   description = "Whether to create an IGW for the VPC"
-  type = bool
-  default = false
+  type        = bool
+  default     = false
 }
 
 variable "environment" {
   description = "The environment for the VPC (dev, stage, prod)"
-  type = string
+  type        = string
 }
 
 variable "vpc_name" {
   description = "The name of the VPC"
-  type = string
+  type        = string
 }
 
 variable "public_subnet_name" {
   description = "Public Subnets name"
-  type = string
+  type        = string
 }
 
 variable "subnet_cidr_block" {
   description = "The CIDR block for the subnet"
-  type = string
-  default = "10.0.3.0/24" 
+  type        = string
+  default     = "10.0.3.0/24"
 }
 
 # Security Group variables___________________________
@@ -59,18 +59,18 @@ variable "allowed_ssh_ip" {
 
 variable "ami" {
   description = "ami ID of instance"
-  type = string
+  type        = string
   # define ami ID in environment
 }
 
 variable "instance_type" {
-    description = "Instance type of instance"
-    type = string
-    default = "t2.micro"
+  description = "Instance type of instance"
+  type        = string
+  default     = "t2.micro"
 }
 
 variable "instance_name" {
-    description = "Name of instance"
-    type = string
-    # define instance_name in environment
+  description = "Name of instance"
+  type        = string
+  # define instance_name in environment
 }

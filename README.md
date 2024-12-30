@@ -68,7 +68,6 @@ The goal of this project is to build an automated AWS infrastructure using Terra
    terraform plan
    terraform apply
    ```
----
 
 ## **Known Issues**
 
@@ -79,9 +78,7 @@ The goal of this project is to build an automated AWS infrastructure using Terra
   - Set up an S3 backend for the `prod` environment to store `.tfstate` files.
   - Reconfigure the pipeline to use the shared state in both jobs.
 
----
-   
-   
+
 ## **How to Use This Project**
 
 1. Clone the repository and navigate to the desired environment (`environments/dev`).

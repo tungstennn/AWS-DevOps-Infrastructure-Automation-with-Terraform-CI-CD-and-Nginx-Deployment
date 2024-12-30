@@ -109,6 +109,7 @@ The goal of this project is to build an automated AWS infrastructure using Terra
     - Run this in your bash script `my_ip=$(curl -s http://ifconfig.me)/32`.
     - Then run `export TF_VAR_allowed_ssh_ip=$my_ip` to set `my_ip` as an environment variable for terraform.
 
+
    ```bash
    terraform plan
    terraform apply

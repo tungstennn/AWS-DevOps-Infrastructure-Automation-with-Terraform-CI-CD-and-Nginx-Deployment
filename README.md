@@ -1,4 +1,5 @@
-# AWS DevOps Infrastructure Automation with Terraform, CI/CD, and Nginx Deployment
+# AWS DevOps Infrastructure Automation
+## Terraform, CI/CD, and Nginx Deployment
 
 ## **Project Objectives**
 

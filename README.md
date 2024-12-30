@@ -79,7 +79,7 @@ The goal of this project is to build an automated AWS infrastructure using Terra
   - Reconfigure the pipeline to use the shared state in both jobs.
 
 
-## **How to Use This Project**
+## **How to Use This Project Locally**
 
 1. Clone the repository and navigate to the desired environment (`environments/dev`).
 2. Set up your AWS credentials as environment variables.

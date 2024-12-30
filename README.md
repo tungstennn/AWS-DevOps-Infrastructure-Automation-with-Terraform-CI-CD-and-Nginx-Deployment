@@ -70,8 +70,17 @@ The goal of this project is to build an automated AWS infrastructure using Terra
    terraform plan
    terraform apply
    ```
-   
-## **How to Use This Project**
+## **Known Issues**
+
+### **Prod CI/CD Pipeline Issue**
+- The `prod` branch pipeline creates the infrastructure successfully, but the second job (Terraform Destroy) does not recognize the resources created in the first job.
+- **Root Cause**: The absence of a Terraform backend to store the `.tfstate` file leads to a lack of shared state between jobs.
+- **Resolution Plan**:
+  - Set up an S3 backend for the `prod` environment to store `.tfstate` files.
+  - Reconfigure the pipeline to use the shared state in both jobs.
+
+
+## **How to Use This Project Locally**
 
 1. Clone the repository and navigate to the desired environment (`environments/dev`).
 2. Set up your AWS credentials as environment variables.

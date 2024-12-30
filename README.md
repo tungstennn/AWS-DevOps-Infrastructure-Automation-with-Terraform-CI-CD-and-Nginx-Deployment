@@ -73,10 +73,8 @@ The goal of this project is to build an automated AWS infrastructure using Terra
 5. **CI/CD Pipeline Progress**:
 
    - **Dev Branch**: The pipeline successfully initilises and plans using Terraform jobs in GitHub Actions.
-   - **Stage Branch**: Similarly, the pipeline for the `stage` branch is successfully initilises and plans (only `prod` branch runs `terraform apply`).
-   - **Prod Branch**:
-     - The pipeline creates infrastructure successfully in the first job (Terraform Apply).
-     - However, the second job (Terraform Destroy) does not recognize the created infrastructure due to the absence of a backend storing the `.tfstate` file.
+   - **Stage Branch**: Similarly, the pipeline for the `stage` branch is successfully initilises and plans.
+   - **Prod Branch**: The pipeline creates infrastructure successfully (only `prod` branch runs `Terraform Apply`).
    - All pipelines currently default the `allowed_ssh_ip` variable to `0.0.0.0/0` instead of dynamically updating it.
 
 ## **Areas of Improvement**

@@ -6,7 +6,7 @@ The goal of this project is to build an automated AWS infrastructure using Terra
 
 1. Provisioning AWS infrastructure with Terraform modules (e.g., VPC, EC2, Security Groups).
 2. Deploying a web application (Nginx) on an EC2 instance.
-3. Ensuring the infrastructure supports multiple environments (dev, staging, production).
+3. Ensuring the infrastructure supports multiple environments (development, staging, production).
 4. Implementing environment-specific configurations using variables and best practices.
 5. Using environment variables for credentials (no hardcoding).
 6. Preparing for CI/CD integration to automate Terraform workflows.

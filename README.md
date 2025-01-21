@@ -132,7 +132,7 @@ graph TD
     D --> G[Terraform Init & Plan]
     G --> H[Terraform Apply]
     H --> I[Infrastructure Created]
-    I --> J[Terraform Destroy (Issue with State Management)]
+    I --> J[Terraform Destroy]
 
     E --> K[Terraform Init & Plan]
     K --> L[Terraform Apply]
@@ -142,7 +142,7 @@ graph TD
     F --> O[Terraform Init & Plan]
     O --> P[Terraform Apply]
     P --> Q[Infrastructure Created]
-    Q --> R[Terraform Destroy (State Not Recognized)]
+    Q --> R[Terraform Destroy]
 
     J --> S[Issue: No Backend State]
     R --> S

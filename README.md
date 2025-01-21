@@ -119,5 +119,64 @@ The goal of this project is to build an automated AWS infrastructure using Terra
 
 ---
 
+## **Project Workflow Diagram**
+
+```mermaid
+graph TD
+    A[Start] --> B[Developer Pushes Code to GitHub]
+    B --> C{Branch?}
+    C -->|dev| D[CI/CD Pipeline for Dev]
+    C -->|stage| E[CI/CD Pipeline for Stage]
+    C -->|prod| F[CI/CD Pipeline for Prod]
+    
+    D --> G[Terraform Init & Plan]
+    G --> H[Terraform Apply]
+    H --> I[Infrastructure Created]
+    I --> J[Terraform Destroy (Issue with State Management)]
+
+    E --> K[Terraform Init & Plan]
+    K --> L[Terraform Apply]
+    L --> M[Infrastructure Created]
+    M --> N[Terraform Destroy]
+
+    F --> O[Terraform Init & Plan]
+    O --> P[Terraform Apply]
+    P --> Q[Infrastructure Created]
+    Q --> R[Terraform Destroy (State Not Recognized)]
+
+    J --> S[Issue: No Backend State]
+    R --> S
+    S --> T[Solution: Configure S3 Backend]
+
+    I --> U[Manual Verification: Nginx Running]
+
+    T --> V[Reconfigure CI/CD to Use S3 Backend]
+    V --> F
+
+    subgraph Dev Environment
+        D
+        G
+        H
+        I
+        J
+    end
+
+    subgraph Stage Environment
+        E
+        K
+        L
+        M
+        N
+    end
+
+    subgraph Prod Environment
+        F
+        O
+        P
+        Q
+        R
+    end
+
+
 
 
